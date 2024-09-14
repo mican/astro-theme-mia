@@ -44,17 +44,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   gtag("config", GOOGLE_GTAG);
 </script> -->
 
-<script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=GTM-PQFD9553"
-></script>
-<script is:inline type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "GTM-PQFD9553");
-</script>
-
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
