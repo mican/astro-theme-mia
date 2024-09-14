@@ -28,7 +28,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Google tag (gtag.js) -->
-<script async is:inline src=`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_GTAG}`></script>
+<!-- <script async is:inline src=`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_GTAG}`></script>
 <script>
   import { GOOGLE_GTAG } from "../config";
 
@@ -42,6 +42,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   gtag("js", new Date());
   // @ts-ignore
   gtag("config", GOOGLE_GTAG);
+</script> -->
+
+<script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=GTM-PQFD9553"
+></script>
+<script is:inline type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GTM-PQFD9553");
 </script>
 
 <!-- Primary Meta Tags -->

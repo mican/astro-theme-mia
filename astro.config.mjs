@@ -6,6 +6,8 @@ import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-theme-mia.pages.dev",
@@ -26,6 +28,12 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     react(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+        debug: true,
+      },
+    }),
   ],
   output: "static",
 });
