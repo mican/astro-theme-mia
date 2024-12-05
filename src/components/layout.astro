@@ -16,6 +16,16 @@ const { title, description } = Astro.props;
 <html lang="en" class="text-zinc-800">
   <head>
     <Meta title={title ? `${title} · ${SITE_TITLE}` : SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+    <script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-8L1TJ4DJSK"
+    ></script>
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8L1TJ4DJSK");
+    </script>
   </head>
   <body>
     <div class="flex flex-col h-full mb-8 overflow-y-scroll antialiased">

@@ -5,10 +5,13 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import partytown from "@astrojs/partytown";
+
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-theme-mia.pages.dev",
+  site: "https://deploy-preview-1--phenomenal-lokum-6a3826.netlify.app",
   trailingSlash: "never",
   prefetch: {
     prefetchAll: true,
@@ -26,6 +29,13 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     react(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+        debug: true,
+      },
+    }),
   ],
-  output: "static",
+  output: "server",
+  adapter: netlify(),
 });
